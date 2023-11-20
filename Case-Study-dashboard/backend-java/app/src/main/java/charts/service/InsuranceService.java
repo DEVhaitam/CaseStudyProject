@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -17,6 +18,7 @@ public class InsuranceService {
     }
 
     public Insurance findById(Integer id){
+
         return insuranceRepository.findById(id).get();
     }
 
