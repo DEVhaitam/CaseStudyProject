@@ -23,9 +23,22 @@ public class InsuranceController {
         return insuranceService.all();
     }
 
+    @GetMapping("/totalNumber")
+    int getTotalNumber(){
+        return insuranceService.all().size();
+    }
+
     @GetMapping("/{id}")
     Insurance findById(@PathVariable(value = "id") Integer id){
         return insuranceService.findById(id);
     }
 
+    @GetMapping("/segments/{segment}")
+    int findByCustomersPerSegmentsPerMonth
+            (@PathVariable(value= "segment") String segment,
+             @RequestParam(value = "month") String month){
+            return insuranceService.numberOfCustomersPerSegmentesPerMonth(segment,month);
+    }
+
+    
 }

@@ -3,6 +3,8 @@
  */
 package charts;
 
+import charts.service.InsuranceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,8 +14,12 @@ public class App {
         return "Running Charts Server!";
     }
 
+
+    private static InsuranceService insuranceService;
+
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
         SpringApplication.run(App.class, args);
+
     }
 }
